@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Powered Text Generator</title>
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <!--DeepAI Script For AI-->
+    <script src="https://cdnjs.deepai.org/deepai.min.js"></script>
+    
+    <!--Css Stylesheet-->
+    <link rel="stylesheet" src="style.css" />
+  </head>
+  <body>
+    <!--Styling Input & Submit Areas-->
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control rounded"
+        id="inputBox"
+        placeholder="Type your Words In Here"
+      />
+      <input
+        class="btn btn-warning"
+        type="button"
+        onclick="getText()"
+        value="Submit"
+      />
+    </div>
+
+    <div class="typingEffect">
+      <h1 id="TitleText">Welcome to Helm Writer</h1>
+      <h4 id="TitleParagraph">
+        This is an AI Powered Text Generator. <br />Input words or a sentence
+        and click submit
+      </h4>
+    </div>
+
+    <br />
+
+    <!--Text Will Be Overwritten by Response from AI-->
+    <h1 id="AIText"></h1>
+
+    <!--Script to Get response from AI-->
+    <script>
+      deepai.setApiKey("Your Api Key Here");
+
+      async function getText() {
+        var inputVal = document.getElementById("inputBox").value;
+
+        var response = await deepai.callStandardApi("text-generator", {
+          text: inputVal,
+        });
+        document.getElementById("AIText").innerHTML = response["output"];
+      }
+    </script>
+  </body>
+</html>
