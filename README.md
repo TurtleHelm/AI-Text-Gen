@@ -6,4 +6,4 @@
 
 ### If You Do not Want to Download any of the files listed here. You can go and try it [here](https://turtlehelm.github.io/projects/text-gen). (WIP)  
 
-#### This uses the [Deepmind](https://deepai.org/machine-learning-model/text-generator) Text Generator API & Python import to retrieve the text  
+#### This uses the [DeepAI](https://deepai.org/machine-learning-model/text-generator) Text Generator API & Python import to retrieve the text  
